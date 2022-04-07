@@ -1,0 +1,10 @@
+# Ext4 harddrive
+UUID=ca22f152-652b-4f5c-99bb-1c07892147da	/			ext4	errors=remount-ro			0	1
+
+# LVM connected discs
+/dev/storage2/storage2				/media/3tb/		ext4	defaults				0	0
+
+# hard-linked folders
+/var/www/kamzici-wp 				/kamzici-jail/public	auto	defaults,nofail,nobootwait,bind	0	2
+
+
