@@ -1,0 +1,17 @@
+# /etc/systemd/system/seafile.service
+
+[Unit]
+Description=Seafile
+# add mysql.service or postgresql.service depending on your database to the line below
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/seafile/seafile-server-latest/seafile.sh start
+ExecStop=/opt/seafile//seafile-server-latest/seafile.sh stop
+LimitNOFILE=infinity
+User=seafile
+Group=seafile
+﻿
+[Install]
+WantedBy=multi-user.target

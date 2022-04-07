@@ -1,0 +1,16 @@
+# /etc/systemd/system/seafile-fuse.service
+
+[Unit]
+Description=Seafile fuse
+After=network.target seafile.service seahub.service
+
+[Service]
+Type=forking
+ExecStart=/opt/seafile/seafile-server-latest/seaf-fuse.sh start -o allow_other /media/3tb/disk-vach-cz-data/read-only
+ExecStop=/opt/seafile/seafile-server-latest/seaf-fuse.sh stop
+LimitNOFILE=infinity
+User=seafile
+Group=seafile
+﻿
+[Install]
+WantedBy=multi-user.target

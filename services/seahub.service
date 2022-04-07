@@ -1,0 +1,16 @@
+# /etc/systemd/system/seahub.service
+
+[Unit]
+Description=Seafile hub
+After=network.target seafile.service
+﻿
+[Service]
+Type=forking
+# change start to start-fastcgi if you want to run fastcgi
+ExecStart=/opt/seafile/seafile-server-latest/seahub.sh start
+ExecStop=/opt/seafile/seafile-server-latest/seahub.sh stop
+User=seafile
+Group=seafile
+
+[Install]
+WantedBy=multi-user.target
