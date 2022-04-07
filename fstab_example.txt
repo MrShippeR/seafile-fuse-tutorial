@@ -1,3 +1,5 @@
+# /etc/fstab  way to hard-link discs to human readable and memorizable path (folder), same way you can hard link folder to other destination
+
 # Ext4 harddrive
 UUID=ca22f152-652b-4f5c-99bb-1c07892147da	/			ext4	errors=remount-ro			0	1
 
