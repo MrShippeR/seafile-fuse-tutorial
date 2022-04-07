@@ -1,0 +1,25 @@
+version: "2.1"
+services:
+  transmission:
+    image: linuxserver/transmission
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000 
+      - TZ=Europe/Prague
+      - TRANSMISSION_WEB_HOME=/transmission-web-control/ #optional
+      # possible UI:
+        # /kettu/
+        # /transmission-web-control/
+        # /combustion-release/
+      # - USER=shipper
+      # - PASS=some-extra-storng-password
+    volumes:
+      - /home/shipper/docker/transmission/:/config
+      - /media/3tb/torrenty:/torrenty
+      # - path to watch folder:/watch
+    ports:
+      - 8086:9091
+      - 50000:50000
+      - 50000:50000/udp
+    restart: unless-stopped

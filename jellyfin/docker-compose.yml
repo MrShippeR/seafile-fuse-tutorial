@@ -1,0 +1,16 @@
+version: "3"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: stream
+    restart: always
+    environment:
+      - PUID=0 
+      - PGID=0     
+# network_mode: "host"
+    ports:
+      - 8088:8096
+    volumes:
+      - /home/shipper/docker/jellyfin/config:/config
+      - /media/3tb/disk-vach-cz-data/read-only/marek@vach.cz/dde21e2f-3382-4ef8-9702-eb703ff314e9_Videa:/videa:ro
+      - /media/3tb/torrenty:/torrenty:ro

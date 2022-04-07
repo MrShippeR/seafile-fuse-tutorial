@@ -1,0 +1,28 @@
+cd /opt/seafile/seafile-server-latest
+
+./seaf-fuse.sh start -o allow_other /media/3tb/disk-vach-cz-data/read-only
+./seaf-fuse.sh stop
+
+./seafile.sh start
+./seahub.sh start
+
+./seafile.sh stop
+./seahub.sh stop
+
+cd /media/3tb/disk-vach-cz-data
+
+su - seafile -s /bin/bash
+
+
+## Sources
+https://github.com/YunoHost-Apps/seafile_ynh/issues/38
+https://manual.seafile.com/extension/fuse/
+
+Autostart
+https://internet-lab.ru/seafile_mediaserver_jellyfin
+https://internet-lab.ru/seafile_start_at_system_boot
+or
+https://manual.seafile.com/deploy/start_seafile_at_system_bootup/
+
+
+
