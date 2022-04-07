@@ -15,14 +15,9 @@ su - seafile -s /bin/bash
 
 
 ## Sources
-https://github.com/YunoHost-Apps/seafile_ynh/issues/38
+https://manual.seafile.com/deploy/
+https://github.com/haiwen/seafile-server-installer
 https://manual.seafile.com/extension/fuse/
-
-Autostart
-https://internet-lab.ru/seafile_mediaserver_jellyfin
-https://internet-lab.ru/seafile_start_at_system_boot
-or
 https://manual.seafile.com/deploy/start_seafile_at_system_bootup/
-
 
 
